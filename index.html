@@ -410,15 +410,7 @@
             'END:VCARD'
         ].join('\n');
 
-        var blob = new Blob([vcf], { type: 'text/vcard' });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = 'Regulator_Woodworking.vcf';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        window.location.href = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcf);
     }
     </script>
 
